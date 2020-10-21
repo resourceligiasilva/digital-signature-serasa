@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Text, View, StyleSheet, TouchableHighlight } from 'react-native'
 import BackgroundImage from '../components/BackgroundImage'
-import Swiper from 'react-native-swiper'
+import Swiper from 'react-native-swiper/src'
 import LocalStorageHelper from '../helpers/LocalStorageHelper';
 
 export default class TutorialScreen extends Component {
