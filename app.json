@@ -3,7 +3,6 @@
     "name": "Serasa Mobile na Nuvem",
     "slug": "Serasa-Mobile-na-Nuvem",
     "privacy": "public",
-    "sdkVersion": "35.0.0",
     "platforms": [
       "ios",
       "android"
