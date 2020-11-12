@@ -7,7 +7,7 @@ import {
     ScrollView,
     SafeAreaView,
     ImageBackground,
-    KeyboardAvoidingView
+    KeyboardAvoidingView, TouchableHighlight, Platform
 } from 'react-native'
 import BackButton from '../components/BackButton'
 import BottomButton from '../components/BottomButton'
@@ -67,10 +67,15 @@ export default class CreatePasswordScreen extends Component {
                 source={require('../assets/background_1/background_1.png')}
                 style={styles.container}
             >
+                <View style={styles.navigation}>
+                    <Text> Crie sua senha</Text>
+                 </View>
+
                 <KeyboardAvoidingView
-                    behavior={'padding'}
+                    behavior={Platform.OS=='ios'?'padding':null}
                     style={styles.container}
                 >
+
                     <ScrollView contentContainerStyle={styles.scrollView}>
                         <View
                             source={require('../assets/background_1/background_1.png')}
@@ -90,10 +95,11 @@ export default class CreatePasswordScreen extends Component {
                                 placeholder='Crie sua senha'
                                 autoCompleteType='password'
                                 secureTextEntry={true}
+                                keyboardType='numeric'
                             />
                             <TextInput
                                 style={[
-                                    styles.textInput,
+                                    styles.textInputPass,
                                     {
                                         opacity: this.state.enableEditable ? 1 : 0.3
                                     }
@@ -104,15 +110,21 @@ export default class CreatePasswordScreen extends Component {
                                 autoCompleteType='password'
                                 secureTextEntry={true}
                                 editable={this.state.enableEditable}
+                                keyboardType='numeric'
                             />
                         </View>
                     </ScrollView>
                     <SafeAreaView>
-                        <BottomButton
-                            title='Emitir ertificado'
+
+                        <TouchableHighlight
+                            style={styles.emitButton}
                             display={this.state.issueCertificateDisplay}
                             onPress={this.createPasswordAction}
-                        />
+                        >
+                            <Text style={styles.emitButtonText}>
+                                Emitir Certificado
+                            </Text>
+                        </TouchableHighlight>
                     </SafeAreaView>
                 </KeyboardAvoidingView>
                 <BackButton
@@ -126,7 +138,8 @@ export default class CreatePasswordScreen extends Component {
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1
+        flex: 1,
+        width:'100%',
     },
     scrollView: {
         flex: 1,
@@ -139,7 +152,8 @@ const styles = StyleSheet.create({
     },
     titleView: {
         flexDirection: 'row',
-        justifyContent: 'center'
+        justifyContent: 'center',
+        marginBottom: 10,
     },
     titleText: {
         textAlign: 'center',
@@ -155,10 +169,45 @@ const styles = StyleSheet.create({
         textAlign: 'left'
     },
     textInput: {
-        borderRadius: 5,
-        backgroundColor: '#F4F7FA',
+        borderRadius: 10,
+        backgroundColor: 'transparent',
+        padding: 10,
+        color: '#444B58',
+        borderWidth: 1,
+        borderColor: '#e0e0e1',
+        marginBottom:10,
+    },
+    textInputPass: {
+        borderRadius: 10,
+        backgroundColor: 'transparent',
+        padding: 10,
+        color: '#444B58',
+        borderWidth: 1,
+        borderColor: '#e0e0e1',
+        marginBottom:30,
+    },
+    navigation: {
+        width: '100%',
+        height: 150,
+        alignItems: 'center',
+        justifyContent:'center',
+        top:0,
+    },
+    emitButton: {
+        position: 'absolute',
+        left: 16,
+        bottom: 16,
+        right: 16,
+        backgroundColor: '#B82E7C',
         padding: 16,
-        marginVertical: 8,
-        color: '#9198A5'
+        borderRadius: 15,
+        marginTop: 16,
+        color: '#ffffff',
+
+    },
+    emitButtonText: {
+        textAlign: 'center',
+        fontSize: 16,
+        color: '#ffffff'
     }
 });

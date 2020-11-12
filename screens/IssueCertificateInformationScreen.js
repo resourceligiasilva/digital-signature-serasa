@@ -33,6 +33,9 @@ export default class IssueCertificateInformationScreen extends Component {
                         Essa senha não pode ser recuperada, então
                         guarde ela com cuidado.
                     </Text>
+                    <Text style={styles.descriptionInfo}>
+                        * Vamos informar sobre o PUK também *
+                    </Text>
                 </View>
                 <View style={{ flex: 1 }} >
                     <BackgroundImage
@@ -70,6 +73,13 @@ const styles = StyleSheet.create({
     description: {
         color: '#ffffff',
         fontSize: 16,
+        fontWeight: '100',
+        textAlign: 'left',
+        marginVertical: 8
+    },
+    descriptionInfo: {
+        color: '#ffffff',
+        fontSize: 18,
         fontWeight: '100',
         textAlign: 'left',
         marginVertical: 8

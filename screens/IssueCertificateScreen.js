@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component, useEffect } from 'react'
 import {
     Text,
     View,
@@ -7,12 +7,14 @@ import {
     ScrollView,
     SafeAreaView,
     TouchableHighlight,
-    KeyboardAvoidingView
+    KeyboardAvoidingView,
+    Platform
 } from 'react-native'
 import BackButton from '../components/BackButton'
 import BottomButton from '../components/BottomButton'
 import TopBackgroundImage from '../components/TopBackgroundImage'
 import InfoButton from '../components/InfoButton'
+import BackgroundImage from '../components/BackgroundImage'
 
 import CertificateService from '../services/CertificateService'
 
@@ -39,10 +41,11 @@ export default class IssueCertificateScreen extends Component {
             })
     }
 
+
     render() {
         return (
             <KeyboardAvoidingView
-                behavior={'padding'}
+                behavior={Platform.OS=='ios'?'padding':null}
                 style={styles.safeArea}
             >
                 <ScrollView contentContainerStyle={styles.scrollView}>
@@ -57,10 +60,6 @@ export default class IssueCertificateScreen extends Component {
                             onChangeText={protocol => this.setState({ protocol })}
                             value={this.state.protocol}
                         />
-                        <InfoButton
-                            title='Aonde encontrar o nº de protocolo? >'
-                            onPress={this.goToProtocolNumberInformation}
-                        />
                         <TextInput
                             style={[styles.textInput, styles.containerItem]}
                             placeholder='0000000'
@@ -68,33 +67,34 @@ export default class IssueCertificateScreen extends Component {
                             onChangeText={password => this.setState({ password })}
                             value={this.state.password}
                         />
-                        <InfoButton
-                            title='Aonde encontrar essa senha? >'
-                            onPress={this.goToPasswordInformationScreen}
-                        />
                     </View>
                 </ScrollView>
                 <SafeAreaView>
-                    <BottomButton
-                        title='Continuar'
+                    <TouchableHighlight
+                        style={styles.continueButton}
                         onPress={this.issueCertificateAction}
-                    />
+                    >
+                        <Text style={styles.continueButtonText}>
+                            Continuar
+                        </Text>
+                    </TouchableHighlight>
                 </SafeAreaView>
                 <BackButton navigation={this.props.navigation} />
             </KeyboardAvoidingView>
         )
     }
 }
-
 const styles = StyleSheet.create({
     safeArea: {
-        flex: 1
+        flex: 1,
     },
     scrollView: {
         flex: 1,
+        width: '100%',
         alignItems: 'center',
         justifyContent: 'center',
-        paddingHorizontal: 24,
+        paddingTop: '32%',
+        paddingHorizontal: '5%',
     },
     scrollViewContent: {
         width: '100%'
@@ -113,9 +113,26 @@ const styles = StyleSheet.create({
         textAlign: 'left'
     },
     textInput: {
-        borderRadius: 5,
-        backgroundColor: '#F4F7FA',
+        borderRadius: 10,
+        backgroundColor: 'transparent',
+        padding: 10,
+        color: '#444B58',
+        borderWidth: 1,
+        borderColor: '#e0e0e1'
+    },
+    continueButton: {
+        position: 'absolute',
+        left: 16,
+        bottom: 16,
+        right: 16,
+        backgroundColor: '#B82E7C',
         padding: 16,
-        color: '#444B58'
+        borderRadius: 15,
+        marginTop: 16,
+    },
+    continueButtonText: {
+        textAlign: 'center',
+        fontSize: 16,
+        color: '#ffffff'
     }
 });

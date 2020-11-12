@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "Serasa Mobile na Nuvem",
-    "slug": "Serasa-Mobile-na-Nuvem",
+    "slug": "Serasa Mobile na Nuvem",
     "privacy": "public",
     "platforms": [
       "ios",
@@ -28,6 +28,8 @@
     "android": {
       "package": "com.serasa.mobilenuvem"
     },
-    "description": ""
+    "web": {
+      "favicon": "./assets/favicon.png"
+    }
   }
 }

@@ -5,9 +5,9 @@ import Swiper from 'react-native-swiper/src'
 import LocalStorageHelper from '../helpers/LocalStorageHelper';
 
 export default class TutorialScreen extends Component {
-    componentDidMount() {
-        LocalStorageHelper.saveFirstAccess()
-    }
+  //  componentDidMount() {
+  //      LocalStorageHelper.saveFirstAccess()
+  //  }
 
     goToIntro = () => {
         this.props.navigation.navigate('Intro')
@@ -80,7 +80,10 @@ const styles = StyleSheet.create({
     slideSviewText: {
         fontSize: 16,
         fontWeight: '300',
-        color: '#444B58'
+        color: '#ffffff',
+        backgroundColor: '#B82E7C',
+        borderRadius: 15,
+        padding: 16
     },
     text: {
         color: '#fff',
@@ -93,14 +96,16 @@ const styles = StyleSheet.create({
         marginHorizontal: 16
     },
     dotView: {
-        backgroundColor: '#04549C',
+        backgroundColor: 'transparent',
         width: 12,
         height: 12,
         borderRadius: 6,
         marginLeft: 4,
         marginRight: 4,
         marginTop: 4,
-        marginBottom: 4
+        marginBottom: 4,
+        borderColor: '#04549C',
+        borderWidth:1,
     },
     activeDotView: {
         backgroundColor: '#04549C',

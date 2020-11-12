@@ -73,13 +73,15 @@ const styles = StyleSheet.create({
     title: {
         fontSize: 50,
         fontWeight: '300',
-        color: '#04549C',
+        color: '#1D4F91',
         marginTop: 16
     },
     subtitle: {
-        fontSize: 16,
-        fontWeight: '300',
+        fontSize: 18,
+        fontWeight: 'bold',
         marginBottom: 24,
-        color: '#444B58'
+        color: '#444B58',
+        textAlign: 'center',
+
     }
 });

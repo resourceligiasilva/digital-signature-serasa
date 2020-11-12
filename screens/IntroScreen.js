@@ -41,7 +41,8 @@ const styles = StyleSheet.create({
         padding: 32
     },
     containerItem: {
-        marginVertical: 8
+        marginVertical: 8,
+        fontSize: 18
     },
     button: {
         width: '100%',
