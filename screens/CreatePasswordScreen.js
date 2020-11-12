@@ -185,13 +185,7 @@ const styles = StyleSheet.create({
         borderColor: '#e0e0e1',
         marginBottom:30,
     },
-    navigation: {
-        width: '100%',
-        height: 150,
-        alignItems: 'center',
-        justifyContent:'center',
-        top:0,
-    },
+
     emitButton: {
         position: 'absolute',
         left: 16,
