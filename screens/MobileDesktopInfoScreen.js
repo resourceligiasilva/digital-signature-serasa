@@ -53,7 +53,7 @@ export default class MobileDesktopInfoScreen extends Component {
                     </View>
                 </SafeAreaView>
                 <DialogInput isDialogVisible={this.state.isDialogVisible}
-                    title={"Insira o e-mail para receber o Mobile Desktop"}
+                    title={"Insira o seu e-mail"}
                     hintInput={"E-mail"}
                     submitText={'Enviar'}
                     cancelText={'Voltar'}

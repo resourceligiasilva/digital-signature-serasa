@@ -47,11 +47,6 @@ export default class ECPFSuccessScreen extends Component {
                             />
                         </View>
                         <View>
-                            <InfoButton
-                                style={{ marginBottom: 16 }}
-                                textAlign='center'
-                                title='Aonde posso usar o meu e-CPF? >'
-                            />
                             <PrimaryButton
                                 title='Continuar'
                                 onPress={this.goToMobileDesktopInfo}
