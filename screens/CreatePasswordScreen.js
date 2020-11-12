@@ -93,6 +93,7 @@ export default class CreatePasswordScreen extends Component {
                                 autoCompleteType='password'
                                 secureTextEntry={true}
                                 keyboardType='numeric'
+                                maxLength={4}
                             />
                             <TextInput
                                 style={[
@@ -108,6 +109,7 @@ export default class CreatePasswordScreen extends Component {
                                 secureTextEntry={true}
                                 editable={this.state.enableEditable}
                                 keyboardType='numeric'
+                                maxLength={4}
                             />
                         </View>
                     </ScrollView>
