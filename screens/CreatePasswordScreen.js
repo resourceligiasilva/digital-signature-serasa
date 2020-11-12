@@ -8,11 +8,10 @@ import {
     SafeAreaView,
     ImageBackground,
     KeyboardAvoidingView, TouchableHighlight, Platform
-} from 'react-native'
-import BackButton from '../components/BackButton'
-import BottomButton from '../components/BottomButton'
-
-import CertificateService from '../services/CertificateService'
+} from 'react-native';
+import SessionPage from "../src/components/SessionPage";
+import BackButton from '../components/BackButton';
+import CertificateService from '../services/CertificateService';
 
 export default class CreatePasswordScreen extends Component {
 
@@ -67,9 +66,7 @@ export default class CreatePasswordScreen extends Component {
                 source={require('../assets/background_1/background_1.png')}
                 style={styles.container}
             >
-                <View style={styles.navigation}>
-                    <Text> Crie sua senha</Text>
-                 </View>
+                <SessionPage pageName="Criar Senha"/>
 
                 <KeyboardAvoidingView
                     behavior={Platform.OS=='ios'?'padding':null}
