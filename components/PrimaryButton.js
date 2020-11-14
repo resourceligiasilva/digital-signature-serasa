@@ -28,7 +28,7 @@ export default class PrimaryButton extends Component {
 
 const styles = StyleSheet.create({
     button: {
-        backgroundColor: '#B82E7C',
+        backgroundColor: '#af1685',
         padding: 16,
         borderRadius: 15,
     },

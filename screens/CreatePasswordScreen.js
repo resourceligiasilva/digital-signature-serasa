@@ -191,7 +191,7 @@ const styles = StyleSheet.create({
         left: 16,
         bottom: 16,
         right: 16,
-        backgroundColor: '#B82E7C',
+        backgroundColor: '#af1685',
         padding: 16,
         borderRadius: 15,
         marginTop: 16,

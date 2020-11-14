@@ -1,19 +1,19 @@
 import React, { useState } from 'react';
 import {StyleSheet, Text, View} from 'react-native';
 
-const SessionPage = ({pageName}) => {
+const SessionPage = ({pageName, textStyle}) => {
     const [page, setPage] = useState(pageName);
     return (
         <View style={styles.navigation}>
-            <Text style={styles.titleText}> Você está em:</Text>
+            <Text style={[styles.titleText, textStyle]}> Você está em:</Text>
             <Text style={[
                 styles.titleText,
-                { fontWeight: "bold" }
+                { fontWeight: "bold"}, 
+                textStyle
             ]}> {page} </Text>
         </View>
     );
 }
-
 const styles = StyleSheet.create({
     navigation: {
         width: '100%',
@@ -21,10 +21,11 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent:'center',
         top:0,
-        flexDirection: 'row',
+        flexDirection: 'row'
     },
     titleText: {
-        fontSize: 14
+        fontSize: 14,
+        color: '#000000'
     }
 });
 

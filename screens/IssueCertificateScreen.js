@@ -1,4 +1,4 @@
-import React, { Component, useEffect } from 'react'
+import React, { Component } from 'react'
 import {
     Text,
     View,
@@ -11,10 +11,8 @@ import {
     Platform
 } from 'react-native'
 import BackButton from '../components/BackButton'
-import BottomButton from '../components/BottomButton'
 import TopBackgroundImage from '../components/TopBackgroundImage'
-import InfoButton from '../components/InfoButton'
-import BackgroundImage from '../components/BackgroundImage'
+import SessionPage from "../src/components/SessionPage";
 
 import CertificateService from '../services/CertificateService'
 
@@ -48,8 +46,11 @@ export default class IssueCertificateScreen extends Component {
                 behavior={Platform.OS=='ios'?'padding':null}
                 style={styles.safeArea}
             >
+                <SafeAreaView>
+                    <TopBackgroundImage/>
+                    <SessionPage pageName="Informar o protocolo" textStyle={{color:'white'}}/>
+                </SafeAreaView>
                 <ScrollView contentContainerStyle={styles.scrollView}>
-                    <TopBackgroundImage />
                     <View style={styles.scrollViewContent}>
                         <Text style={styles.containerItem}>
                             Insira o protocolo e senha que você recebeu quando foi em um ponto de atendimento
@@ -92,9 +93,8 @@ const styles = StyleSheet.create({
         flex: 1,
         width: '100%',
         alignItems: 'center',
-        justifyContent: 'center',
-        paddingTop: '32%',
         paddingHorizontal: '5%',
+        paddingTop: '20%',
     },
     scrollViewContent: {
         width: '100%'
@@ -125,7 +125,7 @@ const styles = StyleSheet.create({
         left: 16,
         bottom: 16,
         right: 16,
-        backgroundColor: '#B82E7C',
+        backgroundColor: '#af1685',
         padding: 16,
         borderRadius: 15,
         marginTop: 16,
